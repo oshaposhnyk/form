@@ -60,8 +60,7 @@ class User extends JsonModel
     {
         $status = parent::validate();
 
-        $logger = new Logger('registration.log');
-        $logger->log(
+        $this->getLogger()->log(
             $status ? 'SUCCESS' : 'ERROR',
             $status ? "User {$this->email} registration successful" : "$this->email - " . json_encode($this->errors)
         );
