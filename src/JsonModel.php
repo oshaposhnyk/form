@@ -7,7 +7,7 @@ use app\src\helpers\Logger;
 
 abstract class JsonModel extends Model
 {
-    public function getLogger()
+    public function getLogger(): Logger
     {
         return new Logger("{$this->fileName()}.log");
     }
