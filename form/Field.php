@@ -23,11 +23,12 @@ class Field
     {
         return sprintf('<div class="form-group">
                 <label>%s</label>
-                <input type="%s" class="form-control%s" name="%s" value="%s">
+                <input placeholder="%s" type="%s" class="form-control%s" name="%s" value="%s">
                 <div class="invalid-feedback">
                     %s
                 </div>
             </div>',
+            $this->model->getLabel($this->attribute),
             $this->model->getLabel($this->attribute),
             $this->type,
             $this->model->hasError($this->attribute) ? ' is-invalid' : '',
