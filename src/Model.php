@@ -3,6 +3,7 @@
 namespace app\src;
 
 use app\src\helpers\JsonFileHandler;
+use app\src\helpers\Logger;
 
 class Model
 {
@@ -112,6 +113,7 @@ class Model
                 }
             }
         }
+
         return empty($this->errors);
     }
 
@@ -125,4 +127,5 @@ class Model
         $errors = $this->errors[$attribute] ?? [];
         return $errors[0] ?? '';
     }
+
 }

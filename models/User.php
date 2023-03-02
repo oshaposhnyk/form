@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\src\helpers\Logger;
 use app\src\JsonModel;
 use app\src\Model;
 
@@ -53,5 +54,18 @@ class User extends JsonModel
         $this->id = uniqid();
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
+    }
+
+    public function validate(): bool
+    {
+        $status = parent::validate();
+
+        $logger = new Logger('registration.log');
+        $logger->log(
+            $status ? 'SUCCESS' : 'ERROR',
+            $status ? "User {$this->email} registration successful" : "$this->email - " . json_encode($this->errors)
+        );
+
+        return $status;
     }
 }

@@ -3,6 +3,7 @@
 namespace app\src;
 
 use app\src\helpers\JsonFileHandler;
+use app\src\helpers\Logger;
 
 abstract class JsonModel extends Model
 {
@@ -31,5 +32,6 @@ abstract class JsonModel extends Model
 
         return true;
     }
+
 
 }
