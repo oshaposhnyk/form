@@ -1,0 +1,16 @@
+{
+    "name": "olexandrshaposhnyk/test1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "core\\": "src/",
+            "app\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Olexandr Shaposhnyk",
+            "email": "shaposhnykolexandr@gmail.com"
+        }
+    ]
+}
